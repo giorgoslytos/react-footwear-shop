@@ -1,0 +1,41 @@
+.App {
+	.homepage-title {
+		background-color: #f8f8f8;
+		padding: 24px;
+	}
+	.navbar-brand {
+		color: #61dafb;
+		&:hover {
+			color: #61dafb;
+		}
+	}
+	.bg-react {
+		background-color: #20232a;
+	}
+	.color-react {
+		color: #61dafb;
+	}
+	.AiOutlineShopping {
+		font-size: 26px;
+	}
+	.FaReact {
+		position: relative;
+		top: -3px;
+	}
+	.Navbar {
+		.btn {
+			color: #28a745;
+			background-color: #20232a !important;
+			border-color: #28a745;
+			&:hover {
+				color: #fff;
+				background-color: #28a745 !important;
+			}
+		}
+		.dropdown-item {
+			&.active {
+				background-color: #28a745;
+			}
+		}
+	}
+}
