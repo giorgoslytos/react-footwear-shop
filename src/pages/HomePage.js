@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ImgMediaCard from '../components/ImgMediaCard';
 import NavFilters from '../components/NavFilters';
-import CheckboxesTags from '../components/CheckboxesTags';
 
 const HomePage = () => {
 	const [shoes, setShoes] = useState([]);
@@ -10,8 +9,7 @@ const HomePage = () => {
 	const [queryType, setQueryType] = useState(['shoes', 'boots']);
 	const [queryBrand, setQueryBrand] = useState([]);
 	const [filterEvent, setFilterEvent] = useState(['date-desc']);
-	const [checkBoxLabel, setCheckBoxLabel] = useState(['']);
-	const [checkBoxValues, setCheckBoxValues] = useState([]);
+	const [checkBoxObj, setCheckBoxObj] = useState(['']);
 
 	useEffect(() => {
 		fetch('../../data/data.json')
@@ -37,25 +35,17 @@ const HomePage = () => {
 						}
 					})
 					.filter((item) => {
-						if (checkBoxValues.length > 0) {
-							console.log('entered');
-							for (let i = 0; i < checkBoxValues.length; i++) {
-								console.log('checkBoxValues ' + checkBoxValues[0]);
-								console.log('checkBoxLabel ' + checkBoxLabel);
-								console.log(item);
-								if (item[checkBoxLabel.toLowerCase()] === checkBoxValues[i]) {
+						if (checkBoxObj.values.length > 0) {
+							for (let i = 0; i < checkBoxObj.values.length; i++) {
+								if (
+									item[checkBoxObj.name].toLowerCase() ===
+									checkBoxObj.values[i].toLowerCase()
+								) {
 									return true;
 								}
 							}
 						} else return true;
 					});
-				// .filter((item) => {
-				// 	for (let i = 0; i < queryType.length; i++) {
-				// 		if (item['brand'] === queryType[i]) {
-				// 			return true;
-				// 		}
-				// 	}
-				// });
 				setShoes(shoesRes);
 			});
 	}, filterEvent);
@@ -79,8 +69,9 @@ const HomePage = () => {
 	}
 
 	function onCheckBoxesChange(label, values) {
-		setCheckBoxLabel(label);
-		setCheckBoxValues(values);
+		// setCheckBoxLabel(label);
+		const obj = new Object({ name: label, values: values });
+		setCheckBoxObj(obj);
 		const tmpEvent = `${label}-${values}`;
 		setFilterEvent([tmpEvent]);
 	}

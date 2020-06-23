@@ -22,13 +22,13 @@ const NavFilters = ({
 	return (
 		<div className="container my-4">
 			<div className="row">
-				<div className="col">
+				<div className="col-6 col-md-4 col-lg-3">
 					<SimpleSelect handleFilterFunction={handleFilterFunction} />
 				</div>
-				<div className="col">
+				<div className="col-6 col-md-4 col-lg-3">
 					<SimpleSelectSort handleSortFunction={handleSortFunction} />
 				</div>
-				<div className="col">
+				<div className="col-6 col-md-4 col-lg-3">
 					<CheckboxesTags
 						placeholderLabel="brand"
 						shoes={shoes}
@@ -36,43 +36,71 @@ const NavFilters = ({
 						onCheckBoxesChange={onCheckBoxesChange}
 					/>
 				</div>
-				<div className="col">
-					<CheckboxesTags placeholderLabel="style" shoes={shoes} />
+				<div className="col-6 col-md-4 col-lg-3">
+					<CheckboxesTags
+						placeholderLabel="style"
+						shoes={shoes}
+						handleFilterBrand={handleFilterBrand}
+						onCheckBoxesChange={onCheckBoxesChange}
+					/>
 				</div>
-				<div className="col">
-					<CheckboxesTags placeholderLabel="brogues" shoes={shoes} />
+				<div className="col-6 col-md-4 col-lg-3">
+					<CheckboxesTags
+						placeholderLabel="brogues"
+						shoes={shoes}
+						handleFilterBrand={handleFilterBrand}
+						onCheckBoxesChange={onCheckBoxesChange}
+					/>
+				</div>
+				<div className="col-6 col-md-4 col-lg-3">
+					<CheckboxesTags
+						placeholderLabel="color"
+						shoes={shoes}
+						handleFilterBrand={handleFilterBrand}
+						onCheckBoxesChange={onCheckBoxesChange}
+					/>
+				</div>
+				<div className="col-6 col-md-4 col-lg-3">
+					<CheckboxesTags
+						placeholderLabel="sole"
+						shoes={shoes}
+						handleFilterBrand={handleFilterBrand}
+						onCheckBoxesChange={onCheckBoxesChange}
+					/>
+				</div>
+				<div className="col-6 col-md-4 col-lg-3">
+					<CheckboxesTags
+						placeholderLabel="lacingSystem"
+						shoes={shoes}
+						handleFilterBrand={handleFilterBrand}
+						onCheckBoxesChange={onCheckBoxesChange}
+					/>
+				</div>
+				<div className="col-6 col-md-4 col-lg-3">
+					<CheckboxesTags
+						placeholderLabel="construction"
+						shoes={shoes}
+						handleFilterBrand={handleFilterBrand}
+						onCheckBoxesChange={onCheckBoxesChange}
+					/>
+				</div>
+				<div className="col-6 col-md-4 col-lg-3">
+					<CheckboxesTags
+						placeholderLabel="leatherType"
+						shoes={shoes}
+						handleFilterBrand={handleFilterBrand}
+						onCheckBoxesChange={onCheckBoxesChange}
+					/>
+				</div>
+				<div className="col-6 col-md-4 col-lg-3">
+					<CheckboxesTags
+						placeholderLabel="sizes"
+						shoes={shoes}
+						handleFilterBrand={handleFilterBrand}
+						onCheckBoxesChange={onCheckBoxesChange}
+					/>
 				</div>
 			</div>
-			{/* <FormControl className={classes.formControl}>
-				<Select
-					value={type}
-					displayEmpty
-					className={classes.selectEmpty}
-					onChange={(event) => setType(event.target.value)}
-					inputProps={{ 'aria-label': 'Without label' }}
-				>
-					<MenuItem
-						value={0}
-						onClick={() =>
-							props.handleFilterFunction('type', ['shoes', 'boots'])
-						}
-					>
-						All
-					</MenuItem>
-					<MenuItem
-						value={1}
-						onClick={() => props.handleFilterFunction('type', ['shoes'])}
-					>
-						Shoes
-					</MenuItem>
-					<MenuItem
-						value={2}
-						onClick={() => props.handleFilterFunction('type', ['boots'])}
-					>
-						Boots
-					</MenuItem>
-				</Select>
-			</FormControl> */}
 		</div>
 	);
 };

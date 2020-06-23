@@ -19,13 +19,16 @@ export default function CheckboxesTags({
 }) {
 	// const [selectedItems, setSelectedItems] = useState([]);
 
-	const checkBoxOptions = [
-		...new Set(shoes.map((shoe) => shoe[placeholderLabel])),
-	].map((item) =>
-		item ? item.charAt(0).toUpperCase() + item.slice(1) : 'None'
-	);
+	const checkBoxOptions =
+		placeholderLabel !== 'sizes'
+			? [...new Set(shoes.map((shoe) => shoe[placeholderLabel]))]
+					.map((item) =>
+						item ? item.charAt(0).toUpperCase() + item.slice(1) : 'None'
+					)
+					.sort()
+			: '';
 
-	placeholderLabel =
+	const placeholder =
 		placeholderLabel.charAt(0).toUpperCase() + placeholderLabel.slice(1);
 
 	function onTagsChange(event, values) {
@@ -39,6 +42,7 @@ export default function CheckboxesTags({
 			multiple
 			id="checkboxes-tags-demo"
 			size="small"
+			className="CheckboxesTags"
 			options={checkBoxOptions}
 			disableCloseOnSelect
 			onChange={onTagsChange}
@@ -57,8 +61,8 @@ export default function CheckboxesTags({
 				<TextField
 					{...params}
 					variant="outlined"
-					label={placeholderLabel}
-					placeholder={'Select ' + placeholderLabel}
+					label={placeholder}
+					placeholder={'Select ' + placeholder}
 				/>
 			)}
 		/>
