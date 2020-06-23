@@ -19,15 +19,15 @@ export default function CheckboxesTags({
 }) {
 	// const [selectedItems, setSelectedItems] = useState([]);
 
-	const checkBoxOptions =
-		placeholderLabel !== 'sizes'
-			? [...new Set(shoes.map((shoe) => shoe[placeholderLabel]))]
-					.map((item) =>
-						item ? item.charAt(0).toUpperCase() + item.slice(1) : 'None'
-					)
-					.sort()
-			: '';
-
+	const checkBoxOptions = [
+		...new Set(shoes.map((shoe) => shoe[placeholderLabel])),
+	]
+		.map((item) =>
+			item
+				? item.toString().charAt(0).toUpperCase() + item.toString().slice(1)
+				: 'None'
+		)
+		.sort();
 	const placeholder =
 		placeholderLabel.charAt(0).toUpperCase() + placeholderLabel.slice(1);
 

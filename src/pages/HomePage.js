@@ -17,6 +17,7 @@ const HomePage = () => {
 		lacingSystem: [],
 		construction: [],
 		leatherType: [],
+		size: [],
 	});
 
 	useEffect(() => {
@@ -64,10 +65,85 @@ const HomePage = () => {
 								return true;
 						}
 						return false;
+					})
+
+					.filter((item) => {
+						if (checkBoxObj['brogues'].length === 0) return true;
+						for (let i = 0; i < checkBoxObj['brogues'].length; i++) {
+							if (
+								item['brogues'].toLowerCase() ===
+								checkBoxObj['brogues'][i].toLowerCase()
+							)
+								return true;
+						}
+						return false;
+					})
+					.filter((item) => {
+						if (checkBoxObj['color'].length === 0) return true;
+						for (let i = 0; i < checkBoxObj['color'].length; i++) {
+							if (
+								item['color'].toLowerCase() ===
+								checkBoxObj['color'][i].toLowerCase()
+							)
+								return true;
+						}
+						return false;
+					})
+					.filter((item) => {
+						if (checkBoxObj['sole'].length === 0) return true;
+						for (let i = 0; i < checkBoxObj['sole'].length; i++) {
+							if (
+								item['sole'].toLowerCase() ===
+								checkBoxObj['sole'][i].toLowerCase()
+							)
+								return true;
+						}
+						return false;
+					})
+					.filter((item) => {
+						if (checkBoxObj['lacingSystem'].length === 0) return true;
+						for (let i = 0; i < checkBoxObj['lacingSystem'].length; i++) {
+							if (
+								item['lacingSystem'].toLowerCase() ===
+								checkBoxObj['lacingSystem'][i].toLowerCase()
+							)
+								return true;
+						}
+						return false;
+					})
+					.filter((item) => {
+						if (checkBoxObj['construction'].length === 0) return true;
+						for (let i = 0; i < checkBoxObj['construction'].length; i++) {
+							if (
+								item['construction'].toLowerCase() ===
+								checkBoxObj['construction'][i].toLowerCase()
+							)
+								return true;
+						}
+						return false;
+					})
+					.filter((item) => {
+						if (checkBoxObj['leatherType'].length === 0) return true;
+						for (let i = 0; i < checkBoxObj['leatherType'].length; i++) {
+							if (
+								item['leatherType'].toLowerCase() ===
+								checkBoxObj['leatherType'][i].toLowerCase()
+							)
+								return true;
+						}
+						return false;
+					})
+					.filter((item) => {
+						if (checkBoxObj['size'].length === 0) return true;
+						for (let i = 0; i < checkBoxObj['size'].length; i++) {
+							if (parseInt(item['size']) === parseInt(checkBoxObj['size'][i]))
+								return true;
+						}
+						return false;
 					});
 				setShoes(shoesRes);
 			});
-	}, [filterEvent]);
+	}, [filterEvent, checkBoxObj, orderDir, queryType, sortBy]);
 
 	function handleSortFunction(parSortBy, parSortDir) {
 		setSortBy(parSortBy);
