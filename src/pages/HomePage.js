@@ -7,9 +7,17 @@ const HomePage = () => {
 	const [sortBy, setSortBy] = useState('date');
 	const [orderDir, setOrderDir] = useState(1);
 	const [queryType, setQueryType] = useState(['shoes', 'boots']);
-	const [queryBrand, setQueryBrand] = useState([]);
-	const [filterEvent, setFilterEvent] = useState(['date-desc']);
-	const [checkBoxObj, setCheckBoxObj] = useState(['']);
+	const [filterEvent, setFilterEvent] = useState('date-desc');
+	const [checkBoxObj, setCheckBoxObj] = useState({
+		brand: [],
+		style: [],
+		brogues: [],
+		color: [],
+		sole: [],
+		lacingSystem: [],
+		construction: [],
+		leatherType: [],
+	});
 
 	useEffect(() => {
 		fetch('../../data/data.json')
@@ -33,22 +41,33 @@ const HomePage = () => {
 								return true;
 							}
 						}
+						return false;
 					})
 					.filter((item) => {
-						if (checkBoxObj.values.length > 0) {
-							for (let i = 0; i < checkBoxObj.values.length; i++) {
-								if (
-									item[checkBoxObj.name].toLowerCase() ===
-									checkBoxObj.values[i].toLowerCase()
-								) {
-									return true;
-								}
-							}
-						} else return true;
+						if (checkBoxObj['brand'].length === 0) return true;
+						for (let i = 0; i < checkBoxObj['brand'].length; i++) {
+							if (
+								item['brand'].toLowerCase() ===
+								checkBoxObj['brand'][i].toLowerCase()
+							)
+								return true;
+						}
+						return false;
+					})
+					.filter((item) => {
+						if (checkBoxObj['style'].length === 0) return true;
+						for (let i = 0; i < checkBoxObj['style'].length; i++) {
+							if (
+								item['style'].toLowerCase() ===
+								checkBoxObj['style'][i].toLowerCase()
+							)
+								return true;
+						}
+						return false;
 					});
 				setShoes(shoesRes);
 			});
-	}, filterEvent);
+	}, [filterEvent]);
 
 	function handleSortFunction(parSortBy, parSortDir) {
 		setSortBy(parSortBy);
@@ -59,23 +78,22 @@ const HomePage = () => {
 			setOrderDir(1);
 		} else console.error('invalid ' + parSortBy);
 		const tmpEvent = `${parSortBy}-${parSortDir}`;
-		setFilterEvent([tmpEvent]);
+		setFilterEvent(tmpEvent);
 	}
 
 	function handleFilterFunction(shoeProp, query) {
 		setQueryType(query);
 		const tmpEvent = `${shoeProp}-${query}`;
-		setFilterEvent([tmpEvent]);
+		setFilterEvent(tmpEvent);
 	}
 
 	function onCheckBoxesChange(label, values) {
-		// setCheckBoxLabel(label);
-		const obj = new Object({ name: label, values: values });
+		let obj = checkBoxObj;
+		obj[label] = values;
 		setCheckBoxObj(obj);
 		const tmpEvent = `${label}-${values}`;
-		setFilterEvent([tmpEvent]);
+		setFilterEvent(tmpEvent);
 	}
-
 	return (
 		<div className="text-center">
 			<div className="homepage-title text-center mb-4">
@@ -105,7 +123,6 @@ const HomePage = () => {
 				shoes={shoes}
 				handleFilterFunction={handleFilterFunction}
 				handleSortFunction={handleSortFunction}
-				// handleFilterBrand={handleFilterBrand}
 				onCheckBoxesChange={onCheckBoxesChange}
 			/>
 			<p className="text-center">{shoes.length} Products found</p>

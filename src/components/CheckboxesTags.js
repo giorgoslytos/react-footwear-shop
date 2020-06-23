@@ -1,6 +1,6 @@
 /* eslint-disable no-use-before-define */
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
@@ -32,8 +32,6 @@ export default function CheckboxesTags({
 		placeholderLabel.charAt(0).toUpperCase() + placeholderLabel.slice(1);
 
 	function onTagsChange(event, values) {
-		console.log(placeholderLabel);
-		console.log(values);
 		onCheckBoxesChange(placeholderLabel, values);
 	}
 
