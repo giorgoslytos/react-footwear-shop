@@ -45,89 +45,42 @@ const HomePage = () => {
 						return false;
 					})
 					.filter((item) => {
-						if (checkBoxObj['brand'].length === 0) return true;
-						for (let i = 0; i < checkBoxObj['brand'].length; i++) {
-							if (
-								item['brand'].toLowerCase() ===
-								checkBoxObj['brand'][i].toLowerCase()
-							)
-								return true;
-						}
-						return false;
-					})
-					.filter((item) => {
-						if (checkBoxObj['style'].length === 0) return true;
-						for (let i = 0; i < checkBoxObj['style'].length; i++) {
-							if (
-								item['style'].toLowerCase() ===
-								checkBoxObj['style'][i].toLowerCase()
-							)
-								return true;
-						}
-						return false;
-					})
-
-					.filter((item) => {
-						if (checkBoxObj['brogues'].length === 0) return true;
-						for (let i = 0; i < checkBoxObj['brogues'].length; i++) {
-							if (
-								item['brogues'].toLowerCase() ===
-								checkBoxObj['brogues'][i].toLowerCase()
-							)
-								return true;
-						}
-						return false;
-					})
-					.filter((item) => {
-						if (checkBoxObj['color'].length === 0) return true;
-						for (let i = 0; i < checkBoxObj['color'].length; i++) {
-							if (
-								item['color'].toLowerCase() ===
-								checkBoxObj['color'][i].toLowerCase()
-							)
-								return true;
-						}
-						return false;
-					})
-					.filter((item) => {
-						if (checkBoxObj['sole'].length === 0) return true;
-						for (let i = 0; i < checkBoxObj['sole'].length; i++) {
-							if (
-								item['sole'].toLowerCase() ===
-								checkBoxObj['sole'][i].toLowerCase()
-							)
-								return true;
-						}
-						return false;
-					})
-					.filter((item) => {
-						if (checkBoxObj['lacingSystem'].length === 0) return true;
-						for (let i = 0; i < checkBoxObj['lacingSystem'].length; i++) {
-							if (
-								item['lacingSystem'].toLowerCase() ===
-								checkBoxObj['lacingSystem'][i].toLowerCase()
-							)
-								return true;
-						}
-						return false;
-					})
-					.filter((item) => {
-						if (checkBoxObj['construction'].length === 0) return true;
-						for (let i = 0; i < checkBoxObj['construction'].length; i++) {
-							if (
-								item['construction'].toLowerCase() ===
-								checkBoxObj['construction'][i].toLowerCase()
-							)
-								return true;
-						}
-						return false;
-					})
-					.filter((item) => {
-						// if (checkBoxObj['leatherType'].length === 0) return true;
 						if (
+							checkBoxObj['leatherType'].length === 0 &&
+							checkBoxObj['construction'].length === 0 &&
+							checkBoxObj['lacingSystem'].length === 0 &&
+							checkBoxObj['sole'].length === 0 &&
+							checkBoxObj['color'].length === 0 &&
+							checkBoxObj['brogues'].length === 0 &&
+							checkBoxObj['style'].length === 0 &&
+							checkBoxObj['brand'].length === 0
+						)
+							return true;
+						else if (
 							checkBoxObj['leatherType']
 								.map((item) => item.toLowerCase())
-								.includes(item['leatherType'].toLowerCase())
+								.includes(item['leatherType'].toLowerCase()) ||
+							checkBoxObj['construction']
+								.map((item) => item.toLowerCase())
+								.includes(item['construction'].toLowerCase()) ||
+							checkBoxObj['lacingSystem']
+								.map((item) => item.toLowerCase())
+								.includes(item['lacingSystem'].toLowerCase()) ||
+							checkBoxObj['sole']
+								.map((item) => item.toLowerCase())
+								.includes(item['sole'].toLowerCase()) ||
+							checkBoxObj['color']
+								.map((item) => item.toLowerCase())
+								.includes(item['color'].toLowerCase()) ||
+							checkBoxObj['brogues']
+								.map((item) => item.toLowerCase())
+								.includes(item['brogues'].toLowerCase()) ||
+							checkBoxObj['style']
+								.map((item) => item.toLowerCase())
+								.includes(item['style'].toLowerCase()) ||
+							checkBoxObj['brand']
+								.map((item) => item.toLowerCase())
+								.includes(item['brand'].toLowerCase())
 						)
 							return true;
 						else return false;
