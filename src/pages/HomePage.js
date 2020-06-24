@@ -123,15 +123,14 @@ const HomePage = () => {
 						return false;
 					})
 					.filter((item) => {
-						if (checkBoxObj['leatherType'].length === 0) return true;
-						for (let i = 0; i < checkBoxObj['leatherType'].length; i++) {
-							if (
-								item['leatherType'].toLowerCase() ===
-								checkBoxObj['leatherType'][i].toLowerCase()
-							)
-								return true;
-						}
-						return false;
+						// if (checkBoxObj['leatherType'].length === 0) return true;
+						if (
+							checkBoxObj['leatherType']
+								.map((item) => item.toLowerCase())
+								.includes(item['leatherType'].toLowerCase())
+						)
+							return true;
+						else return false;
 					})
 					.filter((item) => {
 						if (checkBoxObj['size'].length === 0) return true;
