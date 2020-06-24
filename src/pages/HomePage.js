@@ -136,7 +136,7 @@ const HomePage = () => {
 					.filter((item) => {
 						if (checkBoxObj['size'].length === 0) return true;
 						for (let i = 0; i < checkBoxObj['size'].length; i++) {
-							if (parseInt(item['size']) === parseInt(checkBoxObj['size'][i]))
+							if (item['size'].includes(parseInt(checkBoxObj['size'][i])))
 								return true;
 						}
 						return false;

@@ -17,17 +17,14 @@ export default function CheckboxesTags({
 	handleFilterBrand,
 	onCheckBoxesChange,
 }) {
-	// const [selectedItems, setSelectedItems] = useState([]);
-
-	const checkBoxOptions = [
-		...new Set(shoes.map((shoe) => shoe[placeholderLabel])),
-	]
-		.map((item) =>
-			item
-				? item.toString().charAt(0).toUpperCase() + item.toString().slice(1)
-				: 'None'
-		)
-		.sort();
+	const checkBoxOptions =
+		placeholderLabel !== 'size'
+			? [...new Set(shoes.map((shoe) => shoe[placeholderLabel]))]
+					.map((item) =>
+						item ? item.charAt(0).toUpperCase() + item.slice(1) : 'None'
+					)
+					.sort()
+			: ['39', '40', '41', '42', '43', '44', '45', '46'];
 	const placeholder =
 		placeholderLabel.charAt(0).toUpperCase() + placeholderLabel.slice(1);
 
