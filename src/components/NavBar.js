@@ -103,14 +103,16 @@ const NavBar = (props) => {
 										About
 									</Button>
 								</Link>
+								<Link as={Link} to="/cart" className="text-white">
+									<Button
+										variant="text"
+										color="inherit"
+										className={classes.AiOutlineShopping}
+									>
+										<AiOutlineShopping />
+									</Button>
+								</Link>
 							</div>
-							<Button
-								variant="text"
-								color="inherit"
-								className={classes.AiOutlineShopping}
-							>
-								<AiOutlineShopping />
-							</Button>
 						</Toolbar>
 					</AppBar>
 				</HideOnScroll>

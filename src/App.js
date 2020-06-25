@@ -7,25 +7,25 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import NotFoundPage from './pages/NotFoundPage';
 import ProductPage from './pages/ProductPage';
+import ShoppingCartPage from './pages/ShoppingCartPage';
 
-class App extends React.Component {
-	render() {
-		return (
-			<Router>
-				<div className="App">
-					<NavBar />
-					<div>
-						<Switch>
-							<Route path={['/', '/home']} component={HomePage} exact />
-							<Route path="/about" component={AboutPage} exact />
-							<Route path="/product/:productId" component={ProductPage} />
-							<Route component={NotFoundPage} />
-						</Switch>
-					</div>
+function App() {
+	return (
+		<Router>
+			<div className="App">
+				<NavBar />
+				<div>
+					<Switch>
+						<Route path={['/', '/home']} component={HomePage} exact />
+						<Route path="/about" component={AboutPage} exact />
+						<Route path="/product/:productId" component={ProductPage} />
+						<Route path="/cart" component={ShoppingCartPage} exact />
+						<Route component={NotFoundPage} />
+					</Switch>
 				</div>
-			</Router>
-		);
-	}
+			</div>
+		</Router>
+	);
 }
 
 export default App;

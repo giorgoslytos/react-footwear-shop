@@ -7,6 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import { AiOutlineCheck } from 'react-icons/ai';
 import FormControl from '@material-ui/core/FormControl';
 import NativeSelect from '@material-ui/core/NativeSelect';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -29,8 +30,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ProductPage(props) {
-	const [shoe, setShoe] = useState({ size: '' });
-	const [option, setOption] = useState(10);
+	const [shoe, setShoe] = useState({});
+	const [selectedShoe, setSelectedShoe] = useState();
+	const [option, setOption] = useState('');
 	const classes = useStyles();
 
 	const lookAfter = new Map([
@@ -57,15 +59,16 @@ export default function ProductPage(props) {
 
 		console.log(shoe.size);
 		console.log(event.target.value);
-		// console.log(shoeSizes);
 		console.log(shoe);
 	};
 
-	let shoeSizes = shoe.size;
-	// shoeSizes = shoeSizes.map((x) => x.toString());
-	for (let i = 0; i < shoeSizes.length; i++) {
-		console.log(shoeSizes[i]);
-	}
+	const addToCart = () => {
+		if (option.length > 0) {
+			const temp = { ...shoe };
+			temp.size = parseInt(option);
+			console.log(temp);
+		} else alert('Please select a size!');
+	};
 	return (
 		<div className="container mt-5">
 			<Card className={classes.root}>
@@ -117,6 +120,18 @@ export default function ProductPage(props) {
 										)}
 									</NativeSelect>
 								</FormControl>
+							</div>
+							<div className="text-left mb-2">
+								<Button
+									variant="contained"
+									size="medium"
+									disabled={option.length === 0}
+									color="primary"
+									className={classes.margin}
+									onClick={addToCart}
+								>
+									Add to Cart
+								</Button>
 							</div>
 						</CardContent>
 					</div>
