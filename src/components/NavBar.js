@@ -95,7 +95,7 @@ const NavBar = (props) => {
 							<div className="m-auto">
 								<Link as={Link} to="/" className="text-white">
 									<Button variant="text" color="inherit">
-										Home
+										Shop
 									</Button>
 								</Link>
 								<Link as={Link} to="/about" className="text-white">

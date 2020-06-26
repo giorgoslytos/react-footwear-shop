@@ -8,6 +8,7 @@ import { AiOutlineCheck } from 'react-icons/ai';
 import FormControl from '@material-ui/core/FormControl';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import Button from '@material-ui/core/Button';
+import CartContext from '../contexts/CartContext';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -122,16 +123,22 @@ export default function ProductPage(props) {
 								</FormControl>
 							</div>
 							<div className="text-left mb-2">
-								<Button
-									variant="contained"
-									size="medium"
-									disabled={option.length === 0}
-									color="primary"
-									className={classes.margin}
-									onClick={addToCart}
-								>
-									Add to Cart
-								</Button>
+								<CartContext.Consumer>
+									{({ addProduct }) => {
+										return (
+											<Button
+												variant="contained"
+												size="medium"
+												disabled={option.length === 0}
+												color="primary"
+												className={classes.margin}
+												onClick={() => addProduct(shoe, option)}
+											>
+												Add to Cart
+											</Button>
+										);
+									}}
+								</CartContext.Consumer>
 							</div>
 						</CardContent>
 					</div>
