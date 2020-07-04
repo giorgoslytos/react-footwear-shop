@@ -6,9 +6,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
-import { AiOutlineClose } from 'react-icons/ai';
 import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
 import CloseIcon from '@material-ui/icons/Close';
 import CartContext from '../contexts/CartContext';
 
@@ -75,7 +73,7 @@ export default function ImgMediaCard(props) {
 						</Typography>
 						{props.cartItem ? (
 							<div className={classes.deleteIcon}>
-								<Link onClick={(event) => event.preventDefault()}>
+								<Link to="cart" onClick={(event) => event.preventDefault()}>
 									<CartContext.Consumer>
 										{({ removeProduct }) => {
 											return (

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { withStyles } from '@material-ui/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -32,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ProductPage(props) {
 	const [shoe, setShoe] = useState({});
-	const [selectedShoe, setSelectedShoe] = useState();
 	const [option, setOption] = useState('');
 	const classes = useStyles();
 
@@ -52,7 +50,7 @@ export default function ProductPage(props) {
 					result.filter((item) => item.id === props.match.params.productId)[0]
 				)
 			);
-	}, []);
+	}, [props.match.params.productId]);
 
 	const handleChange = (event) => {
 		const name = event.target.name;
