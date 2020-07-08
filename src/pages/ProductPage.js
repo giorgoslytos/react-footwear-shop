@@ -70,10 +70,10 @@ export default function ProductPage(props) {
 	};
 	return (
 		<div className="container mt-5">
-			<Card className={classes.root}>
+			<Card className={classes.root + " row"}>
 				<CardMedia
 					component="img"
-					className={classes.flexItem}
+					className={classes.flexItem + " col-md order-2 order-md-1"}
 					alt="Contemplative Reptile"
 					image={
 						shoe.source
@@ -82,7 +82,7 @@ export default function ProductPage(props) {
 					}
 					title="Contemplative Reptile"
 				/>
-				<div className={classes.flexItem}>
+				<div className={classes.flexItem + " col-md order-1 order-md-2"}>
 					<div className="ml-4">
 						<CardContent>
 							<div>

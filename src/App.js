@@ -12,6 +12,7 @@ import CartContext from './contexts/CartContext';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import { Link } from 'react-router-dom';
+import json2xml from './utils/json2xml';
 
 function Alert(props) {
 	return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -55,7 +56,7 @@ function App() {
 		});
 		order.products = products;
 		order.discount = totalPrice >= 100 ? 0.1 : 0;
-		console.log(JSON.stringify(order));
+		console.log(json2xml(order));
 		alert('check your console in developer tools!');
 	};
 	const props = {
@@ -93,7 +94,6 @@ function App() {
 			<Router>
 				<div className="App">
 					<NavBar />
-					<div>
 						<Switch>
 							<Route path={['/', '/home']} component={HomePage} exact />
 							<Route path="/about" component={AboutPage} exact />
@@ -101,7 +101,6 @@ function App() {
 							<Route path="/cart" component={ShoppingCartPage} exact />
 							<Route component={NotFoundPage} />
 						</Switch>
-					</div>
 					<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
 						<Alert onClose={handleClose} severity="success">
 							<Link to="/cart" className="text-white">

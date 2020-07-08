@@ -25,7 +25,7 @@ const ShoppingCartPage = () => {
 		<div className="container">
 			<h1 className="text-center my-4">Shopping Cart</h1>
 			<div className="row">
-				<div className="col">
+				<div className="col-md order-2 order-md-1">
 					<CartContext.Consumer>
 						{({ cart }) => {
 							return cart.map((item, key) => (
@@ -36,7 +36,7 @@ const ShoppingCartPage = () => {
 						}}
 					</CartContext.Consumer>
 				</div>
-				<div className="col">
+				<div className="col-md order-1 order-md-2 mb-3">
 					<div className="text-">
 						<CartContext.Consumer>
 							{({ totalPrice, handleCheckout }) => {
