@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4141dc66fe461ba71c94dc9b47c80a63",
+    "revision": "747f41335b3d01d787bd4b34304d0321",
     "url": "/react-footwear-shop/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-footwear-shop/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "12fe04b60306c391f1ca",
+    "revision": "d90991c773dab5308e5f",
     "url": "/react-footwear-shop/static/css/main.8010212c.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-footwear-shop/static/js/2.9fe3880e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "12fe04b60306c391f1ca",
-    "url": "/react-footwear-shop/static/js/main.8c6896d7.chunk.js"
+    "revision": "d90991c773dab5308e5f",
+    "url": "/react-footwear-shop/static/js/main.4009447c.chunk.js"
   },
   {
     "revision": "c7d88e8753ccdf91f328",
