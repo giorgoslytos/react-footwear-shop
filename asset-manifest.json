@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-footwear-shop/static/css/main.8010212c.chunk.css",
-    "main.js": "/react-footwear-shop/static/js/main.4009447c.chunk.js",
-    "main.js.map": "/react-footwear-shop/static/js/main.4009447c.chunk.js.map",
+    "main.js": "/react-footwear-shop/static/js/main.990fcd26.chunk.js",
+    "main.js.map": "/react-footwear-shop/static/js/main.990fcd26.chunk.js.map",
     "runtime-main.js": "/react-footwear-shop/static/js/runtime-main.d270d492.js",
     "runtime-main.js.map": "/react-footwear-shop/static/js/runtime-main.d270d492.js.map",
     "static/css/2.af3c1da9.chunk.css": "/react-footwear-shop/static/css/2.af3c1da9.chunk.css",
     "static/js/2.9fe3880e.chunk.js": "/react-footwear-shop/static/js/2.9fe3880e.chunk.js",
     "static/js/2.9fe3880e.chunk.js.map": "/react-footwear-shop/static/js/2.9fe3880e.chunk.js.map",
     "index.html": "/react-footwear-shop/index.html",
-    "precache-manifest.f1861407e883a12d0c7c4f502afdbe0c.js": "/react-footwear-shop/precache-manifest.f1861407e883a12d0c7c4f502afdbe0c.js",
+    "precache-manifest.a5bdd65acc690dea43bd35f1e79efc4f.js": "/react-footwear-shop/precache-manifest.a5bdd65acc690dea43bd35f1e79efc4f.js",
     "service-worker.js": "/react-footwear-shop/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/react-footwear-shop/static/css/2.af3c1da9.chunk.css.map",
     "static/css/main.8010212c.chunk.css.map": "/react-footwear-shop/static/css/main.8010212c.chunk.css.map",
@@ -41,6 +41,6 @@
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.9fe3880e.chunk.js",
     "static/css/main.8010212c.chunk.css",
-    "static/js/main.4009447c.chunk.js"
+    "static/js/main.990fcd26.chunk.js"
   ]
 }
