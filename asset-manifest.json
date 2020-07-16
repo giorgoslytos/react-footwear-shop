@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/react-footwear-shop/static/css/main.8010212c.chunk.css",
-    "main.js": "/react-footwear-shop/static/js/main.990fcd26.chunk.js",
-    "main.js.map": "/react-footwear-shop/static/js/main.990fcd26.chunk.js.map",
+    "main.js": "/react-footwear-shop/static/js/main.e94010f5.chunk.js",
+    "main.js.map": "/react-footwear-shop/static/js/main.e94010f5.chunk.js.map",
     "runtime-main.js": "/react-footwear-shop/static/js/runtime-main.d270d492.js",
     "runtime-main.js.map": "/react-footwear-shop/static/js/runtime-main.d270d492.js.map",
     "static/css/2.af3c1da9.chunk.css": "/react-footwear-shop/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.9fe3880e.chunk.js": "/react-footwear-shop/static/js/2.9fe3880e.chunk.js",
-    "static/js/2.9fe3880e.chunk.js.map": "/react-footwear-shop/static/js/2.9fe3880e.chunk.js.map",
+    "static/js/2.a57594cf.chunk.js": "/react-footwear-shop/static/js/2.a57594cf.chunk.js",
+    "static/js/2.a57594cf.chunk.js.map": "/react-footwear-shop/static/js/2.a57594cf.chunk.js.map",
     "index.html": "/react-footwear-shop/index.html",
-    "precache-manifest.a5bdd65acc690dea43bd35f1e79efc4f.js": "/react-footwear-shop/precache-manifest.a5bdd65acc690dea43bd35f1e79efc4f.js",
+    "precache-manifest.f962bea39a13f054b321d56f42b85217.js": "/react-footwear-shop/precache-manifest.f962bea39a13f054b321d56f42b85217.js",
     "service-worker.js": "/react-footwear-shop/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/react-footwear-shop/static/css/2.af3c1da9.chunk.css.map",
     "static/css/main.8010212c.chunk.css.map": "/react-footwear-shop/static/css/main.8010212c.chunk.css.map",
-    "static/js/2.9fe3880e.chunk.js.LICENSE.txt": "/react-footwear-shop/static/js/2.9fe3880e.chunk.js.LICENSE.txt",
+    "static/js/2.a57594cf.chunk.js.LICENSE.txt": "/react-footwear-shop/static/js/2.a57594cf.chunk.js.LICENSE.txt",
     "static/media/Allen-Edmonds-Blind-Brogue-2-1030x646.jpg": "/react-footwear-shop/static/media/Allen-Edmonds-Blind-Brogue-2-1030x646.688985cc.jpg",
     "static/media/Dalton_3512_BrownCordovan_Angle_web.jpg": "/react-footwear-shop/static/media/Dalton_3512_BrownCordovan_Angle_web.ddd81477.jpg",
     "static/media/Foster-and-Son-1030x687.jpg": "/react-footwear-shop/static/media/Foster-and-Son-1030x687.fc9dd0fc.jpg",
@@ -39,8 +39,8 @@
   "entrypoints": [
     "static/js/runtime-main.d270d492.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.9fe3880e.chunk.js",
+    "static/js/2.a57594cf.chunk.js",
     "static/css/main.8010212c.chunk.css",
-    "static/js/main.990fcd26.chunk.js"
+    "static/js/main.e94010f5.chunk.js"
   ]
 }
